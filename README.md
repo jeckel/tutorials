@@ -1,9 +1,9 @@
-# tutoriels
+# Tutoriels
 Sources for all tutoriels in http://www.jeckel.fr
 
-## Portainer
+## Docker
 
-- [1. Portainer, docker-compose, Nginx](portainer/1-portainer-docker-compose-nginx/)
+- [1. Portainer, docker-compose, Nginx](docker/1-portainer-docker-compose-nginx/)
 
 # License
 
