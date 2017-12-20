@@ -12,7 +12,10 @@
 In a shell command line, run :
 
 ```bash
-$> ./start.sh
+$> ./docker-compose up -d grafana-storage
+// wait a litle
+
+$> ./docker-compose up
 ```
 
 Open your browser at this location : http://localhost:3000/
