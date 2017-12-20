@@ -8,3 +8,4 @@ Pre-configure Grafana with docker-compose
 - [Step-2](step-2/): Running Grafana with PostgreSQL as a config backend
 - [Step-3](step-3/): Add healthcheck to PostgreSQL and boot sequence
 - [Step-4](step-4/): Export grafana configuration
+- [Step-5](step-5/): Load saved configuration on startup
