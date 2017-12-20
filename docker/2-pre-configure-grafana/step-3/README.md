@@ -1,6 +1,6 @@
 # Step 3 - Add healthcheck to PostgreSQL and boot sequence
 
-:arrow_right: [Read full tutorial (in french for now)](http://www.jeckel.fr/)
+:arrow_right: [Read full tutorial (in french for now)](http://www.jeckel.fr/2017/12/pre-configurer-grafana-avec-docker-compose/)
 
 # Requirements
 
