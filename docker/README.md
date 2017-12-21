@@ -8,4 +8,4 @@
 ## 2. Pre-configure Grafan with docker-compose
 
 - [Source files](2-pre-configure-grafana/)
-- [Full article](http://www.jeckel.fr)
+- [Full article](http://www.jeckel.fr/2017/12/pre-configurer-grafana-avec-docker-compose/)
