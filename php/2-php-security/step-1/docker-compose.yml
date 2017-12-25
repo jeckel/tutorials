@@ -17,4 +17,5 @@ services:
       - mysql
     volumes:
       - ./src:/project
-    command: php -v
+    user: "${UID:-1000}:${GID:-1000}"
+    command: php -v && composer --version
