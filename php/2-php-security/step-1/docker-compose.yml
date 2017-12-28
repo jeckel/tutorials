@@ -17,4 +17,4 @@ services:
       - mysql
     volumes:
       - ./:/project
-    command: php -v && composer --version
+    command: php src/index.php
