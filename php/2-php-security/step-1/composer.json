@@ -12,5 +12,10 @@
             "email": "devci@j3ck3l.me"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Tutorial\\": "src/"
+        }
+    }
 }

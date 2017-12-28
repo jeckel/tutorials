@@ -16,6 +16,5 @@ services:
     depends_on:
       - mysql
     volumes:
-      - ./src:/project
-    user: "${UID:-1000}:${GID:-1000}"
+      - ./:/project
     command: php -v && composer --version
