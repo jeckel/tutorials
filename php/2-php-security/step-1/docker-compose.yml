@@ -18,3 +18,8 @@ services:
     volumes:
       - ./:/project
     command: php src/index.php
+    environment:
+      - MYSQL_PASSWORD=password
+      - MYSQL_USER=user
+      - MYSQL_DATABASE=tutorial
+      - MYSQL_HOST=mysql
