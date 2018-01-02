@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3af1d7a016f5374765350c0ffccd3134",
+    "content-hash": "b9d6321722eae97358d6aad4ff83b2a0",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -75,7 +75,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v5.5.17",
+            "version": "v5.5.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -119,16 +119,16 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.5.17",
+            "version": "v5.5.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "d9e269284eba43bd2e9e8d1f1ba12362b00ec096"
+                "reference": "03e9014d2091a30b025c895aa6d39c2755576ea5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/d9e269284eba43bd2e9e8d1f1ba12362b00ec096",
-                "reference": "d9e269284eba43bd2e9e8d1f1ba12362b00ec096",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/03e9014d2091a30b025c895aa6d39c2755576ea5",
+                "reference": "03e9014d2091a30b025c895aa6d39c2755576ea5",
                 "shasum": ""
             },
             "require": {
@@ -159,20 +159,20 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2017-09-19T13:09:37+00:00"
+            "time": "2017-11-22T19:01:14+00:00"
         },
         {
             "name": "illuminate/database",
-            "version": "v5.5.17",
+            "version": "v5.5.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "9b3bdecfd74279d305ad1d3d56ae62b1b54a230d"
+                "reference": "e5f0c2ce642baf74fc126f0077032b13c50e8997"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/9b3bdecfd74279d305ad1d3d56ae62b1b54a230d",
-                "reference": "9b3bdecfd74279d305ad1d3d56ae62b1b54a230d",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/e5f0c2ce642baf74fc126f0077032b13c50e8997",
+                "reference": "e5f0c2ce642baf74fc126f0077032b13c50e8997",
                 "shasum": ""
             },
             "require": {
@@ -218,20 +218,20 @@
                 "orm",
                 "sql"
             ],
-            "time": "2017-10-17T12:16:50+00:00"
+            "time": "2017-12-19T14:02:10+00:00"
         },
         {
             "name": "illuminate/support",
-            "version": "v5.5.17",
+            "version": "v5.5.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "132b06edaab3808f63943004911d58785f164ab4"
+                "reference": "4db3cc82b483172b1b25d9dfcec684927f5c8cf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/132b06edaab3808f63943004911d58785f164ab4",
-                "reference": "132b06edaab3808f63943004911d58785f164ab4",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/4db3cc82b483172b1b25d9dfcec684927f5c8cf9",
+                "reference": "4db3cc82b483172b1b25d9dfcec684927f5c8cf9",
                 "shasum": ""
             },
             "require": {
@@ -275,7 +275,40 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2017-10-17T12:18:29+00:00"
+            "time": "2017-12-24T20:02:59+00:00"
+        },
+        {
+            "name": "jeckel/demotools",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeckel/demotools.git",
+                "reference": "d6172b6521c7f828121c230417ef06590892ce2e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeckel/demotools/zipball/d6172b6521c7f828121c230417ef06590892ce2e",
+                "reference": "d6172b6521c7f828121c230417ef06590892ce2e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DemoTools\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Julien MERCIER",
+                    "email": "devci@j3ck3l.me"
+                }
+            ],
+            "description": "Tools for demo script",
+            "time": "2018-01-02T16:06:45+00:00"
         },
         {
             "name": "nesbot/carbon",

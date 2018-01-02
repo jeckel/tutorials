@@ -3,7 +3,8 @@
     "description": "Tutorial about some security tips with databases",
     "type": "project",
     "require": {
-        "illuminate/database": "^5.5"
+        "illuminate/database": "^5.5",
+        "jeckel/demotools": "^0.1"
     },
     "license": "MIT",
     "authors": [
