@@ -279,16 +279,16 @@
         },
         {
             "name": "jeckel/demotools",
-            "version": "v0.1.0",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeckel/demotools.git",
-                "reference": "d6172b6521c7f828121c230417ef06590892ce2e"
+                "reference": "be65ab06a8ad70a12b7b60fbfd6ffa888a5629df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeckel/demotools/zipball/d6172b6521c7f828121c230417ef06590892ce2e",
-                "reference": "d6172b6521c7f828121c230417ef06590892ce2e",
+                "url": "https://api.github.com/repos/jeckel/demotools/zipball/be65ab06a8ad70a12b7b60fbfd6ffa888a5629df",
+                "reference": "be65ab06a8ad70a12b7b60fbfd6ffa888a5629df",
                 "shasum": ""
             },
             "type": "library",
@@ -308,7 +308,7 @@
                 }
             ],
             "description": "Tools for demo script",
-            "time": "2018-01-02T16:06:45+00:00"
+            "time": "2018-01-02T16:58:34+00:00"
         },
         {
             "name": "nesbot/carbon",
