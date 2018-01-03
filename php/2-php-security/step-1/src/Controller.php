@@ -71,8 +71,8 @@ class Controller
         Terminal::printTitle("Enter user details:");
         $user = new User();
         $user->login = Terminal::readUserEntry(" - Login: ");
-        $user->passwd = Terminal::readUserEntry(" - Password: ");
         $user->email = Terminal::readUserEntry(" - Email: ");
+        $user->passwd = Terminal::readUserEntry(" - Password: ");
         try {
             $user->save();
         } catch(\Illuminate\Database\QueryException $e) {

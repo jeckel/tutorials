@@ -120,6 +120,7 @@ $menuItems = [
 ];
 
 while(($selectedItem = Terminal::menu($menuItems)) != MENU_ITEM_EXIT) {
+    printf("\n");
     switch($selectedItem) {
         case MENU_ITEM_ADD_USER: while(!$controller->createNewUser());
             Terminal::pause();
