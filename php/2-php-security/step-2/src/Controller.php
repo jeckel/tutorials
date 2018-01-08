@@ -72,7 +72,7 @@ class Controller
         $user = new User();
         $user->login = Terminal::readUserEntry(" - Login: ");
         $user->email = Terminal::readUserEntry(" - Email: ");
-        $user->passwd = Terminal::readUserEntry(" - Password: ");
+        $user->password = Terminal::readUserEntry(" - Password: ");
         try {
             $user->save();
         } catch(\Illuminate\Database\QueryException $e) {
