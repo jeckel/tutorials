@@ -105,15 +105,18 @@ class Controller
     public function login()
     {
         Terminal::printTitle('Try to login with user:');
-        $users = User::where('login', Terminal::readUserEntry(" - Login: "))
-            ->where('passwd', Terminal::readUserEntry(" - Password: "))
-            ->get();
-        if (count($users) == 0) {
+
+        try {
+            $user = User::login(
+                Terminal::readUserEntry(" - Login: "),
+                Terminal::readUserEntry(" - Password: ")
+            );
+        } catch(\Exception $e) {
             Terminal::printFailure("Login failed");
             return false;
         }
         Terminal::printSuccess('User login success:');
-        $this->debugUser($users[0]);
+        $this->debugUser($user);
         Terminal::printSuccess('done');
         return true;
     }
