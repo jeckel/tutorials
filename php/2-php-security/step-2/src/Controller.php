@@ -72,7 +72,7 @@ class Controller
         $user = new User();
         $user->login = Terminal::readUserEntry(" - Login: ");
         $user->email = Terminal::readUserEntry(" - Email: ");
-        $user->password = Terminal::readUserEntry(" - Password: ");
+        $user->passwd = Terminal::readUserEntry(" - Password: ");
         try {
             $user->save();
         } catch(\Illuminate\Database\QueryException $e) {
@@ -80,6 +80,7 @@ class Controller
                 throw $e;
             }
             // Duplicate key
+            Terminal::printFailure($e->getMessage());
             Terminal::printFailure('User already exists');
             return false;
         }

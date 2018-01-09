@@ -1,6 +1,7 @@
 <?php
 namespace Tutorial;
 
+use DemoTools\Terminal;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -35,9 +36,9 @@ class User extends Model
     /**
      * @param string $password
      */
-    public function setPasswordAttribute(string $password)
+    public function setPasswdAttribute(string $password)
     {
-        $this->passwd = self::passwordHash($password);
+        $this->attributes['passwd'] = self::passwordHash($password);
     }
 
     /**
