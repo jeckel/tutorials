@@ -1,0 +1,13 @@
+{
+  "name": "jest-and-promises",
+  "version": "1.0.0",
+  "description": "How to test Promises with Jest",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Julien Mercier <devci@j3ck3l.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.0.5"
+  }
+}
