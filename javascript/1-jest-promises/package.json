@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "How to test Promises with Jest",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watchAll"
   },
   "author": "Julien Mercier <devci@j3ck3l.me>",
   "license": "MIT",
