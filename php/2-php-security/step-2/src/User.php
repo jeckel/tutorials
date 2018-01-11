@@ -47,6 +47,6 @@ class User extends Model
      */
     protected static function passwordHash(string $password): string
     {
-        return md5($password);
+        return sha1($password);
     }
 }
