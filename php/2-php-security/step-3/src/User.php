@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class User extends Model
 {
+    const SALT = 'MY-SALT';
+
     /**
      * Define table name
      * @var string
@@ -33,6 +35,12 @@ class User extends Model
         return $user[0];
     }
 
+    public function save(array $options = [])
+    {
+        $this->attributes['hash'] = self::generateUserHash($this);
+        parent::save($options);
+    }
+
     /**
      * @param string $password
      */
@@ -47,6 +55,17 @@ class User extends Model
      */
     protected static function passwordHash(string $password): string
     {
-        return md5($password);
+        return sha1($password);
+    }
+
+    protected static function generateUserHash(User $user): string
+    {
+        return sha1(
+            $user->login .
+            $user->email .
+            self::SALT .
+            $user->passwd .
+            $user->id
+        );
     }
 }
