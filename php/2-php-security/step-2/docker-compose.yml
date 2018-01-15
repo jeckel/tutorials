@@ -1,0 +1,25 @@
+version: '3'
+volumes:
+  mysql-data:
+services:
+  mysql:
+    image: mysql
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_PASSWORD=password
+      - MYSQL_USER=user
+      - MYSQL_DATABASE=tutorial
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
+  php:
+    build: ../
+    depends_on:
+      - mysql
+    volumes:
+      - ./:/project
+    command: php src/index.php
+    environment:
+      - MYSQL_PASSWORD=password
+      - MYSQL_USER=user
+      - MYSQL_DATABASE=tutorial
+      - MYSQL_HOST=mysql
