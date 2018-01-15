@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9d6321722eae97358d6aad4ff83b2a0",
+    "content-hash": "8098146c5813aa3c8225e70e147d24d9",
     "packages": [
         {
             "name": "doctrine/inflector",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "e11d84c6e018beedd929cff5220969a3c6d1d462"
+                "reference": "5527a48b7313d15261292c149e55e26eae771b0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/e11d84c6e018beedd929cff5220969a3c6d1d462",
-                "reference": "e11d84c6e018beedd929cff5220969a3c6d1d462",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/5527a48b7313d15261292c149e55e26eae771b0a",
+                "reference": "5527a48b7313d15261292c149e55e26eae771b0a",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0"
+                "php": "^7.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^6.2"
@@ -29,7 +29,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -71,7 +71,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2017-07-22T12:18:28+00:00"
+            "time": "2018-01-09T20:05:19+00:00"
         },
         {
             "name": "illuminate/container",
@@ -221,6 +221,51 @@
             "time": "2017-12-19T14:02:10+00:00"
         },
         {
+            "name": "illuminate/events",
+            "version": "v5.5.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/events.git",
+                "reference": "1b558bfa1013f25b35e593c83fce7990d20c4d97"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/1b558bfa1013f25b35e593c83fce7990d20c4d97",
+                "reference": "1b558bfa1013f25b35e593c83fce7990d20c4d97",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "5.5.*",
+                "illuminate/contracts": "5.5.*",
+                "illuminate/support": "5.5.*",
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Events\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Events package.",
+            "homepage": "https://laravel.com",
+            "time": "2017-12-14T13:29:55+00:00"
+        },
+        {
             "name": "illuminate/support",
             "version": "v5.5.28",
             "source": {
@@ -279,16 +324,16 @@
         },
         {
             "name": "jeckel/demotools",
-            "version": "v0.1.1",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeckel/demotools.git",
-                "reference": "be65ab06a8ad70a12b7b60fbfd6ffa888a5629df"
+                "reference": "af25a846f10d61313058d9136fa57015ec2fe6fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeckel/demotools/zipball/be65ab06a8ad70a12b7b60fbfd6ffa888a5629df",
-                "reference": "be65ab06a8ad70a12b7b60fbfd6ffa888a5629df",
+                "url": "https://api.github.com/repos/jeckel/demotools/zipball/af25a846f10d61313058d9136fa57015ec2fe6fa",
+                "reference": "af25a846f10d61313058d9136fa57015ec2fe6fa",
                 "shasum": ""
             },
             "type": "library",
@@ -308,7 +353,7 @@
                 }
             ],
             "description": "Tools for demo script",
-            "time": "2018-01-02T16:58:34+00:00"
+            "time": "2018-01-15T07:59:49+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -521,16 +566,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v3.4.2",
+            "version": "v3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "4c5d5582baf2829751a5207659329c1f52eedeb6"
+                "reference": "17b5962d252b2d6d1d37a2485ebb7ddc5b2bef0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/4c5d5582baf2829751a5207659329c1f52eedeb6",
-                "reference": "4c5d5582baf2829751a5207659329c1f52eedeb6",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/17b5962d252b2d6d1d37a2485ebb7ddc5b2bef0a",
+                "reference": "17b5962d252b2d6d1d37a2485ebb7ddc5b2bef0a",
                 "shasum": ""
             },
             "require": {
@@ -585,7 +630,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2017-12-12T08:27:14+00:00"
+            "time": "2018-01-03T07:37:34+00:00"
         }
     ],
     "packages-dev": [],

@@ -4,7 +4,8 @@
     "type": "project",
     "require": {
         "illuminate/database": "^5.5",
-        "jeckel/demotools": "^0.1"
+        "illuminate/events": "^5.5",
+        "jeckel/demotools": "^0.2"
     },
     "license": "MIT",
     "authors": [
