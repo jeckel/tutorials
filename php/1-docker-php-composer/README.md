@@ -1,6 +1,6 @@
 # Docker PHP image with Composer pre-installed
 
-:arrow_right: [Read full tutorial (in french for now)](http://www.jeckel.fr/)
+:arrow_right: [Read full tutorial (in french for now)](http://www.jeckel.fr/2017/12/une-image-docker-php-avec-composer-pre-installe/)
 
 # Requirements
 
