@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5b5b297a0dde07dcd39a355b9e6ae50",
+    "content-hash": "b2bb57339e7a1ccd3b1a6d069b929097",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -279,16 +279,16 @@
         },
         {
             "name": "jeckel/demotools",
-            "version": "v0.2.0",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeckel/demotools.git",
-                "reference": "af25a846f10d61313058d9136fa57015ec2fe6fa"
+                "reference": "1d66604ff9c7f1c4b4e74ecb9043cf92eb38512b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeckel/demotools/zipball/af25a846f10d61313058d9136fa57015ec2fe6fa",
-                "reference": "af25a846f10d61313058d9136fa57015ec2fe6fa",
+                "url": "https://api.github.com/repos/jeckel/demotools/zipball/1d66604ff9c7f1c4b4e74ecb9043cf92eb38512b",
+                "reference": "1d66604ff9c7f1c4b4e74ecb9043cf92eb38512b",
                 "shasum": ""
             },
             "type": "library",
@@ -308,7 +308,7 @@
                 }
             ],
             "description": "Tools for demo script",
-            "time": "2018-01-15T07:59:49+00:00"
+            "time": "2018-01-15T11:09:48+00:00"
         },
         {
             "name": "nesbot/carbon",
