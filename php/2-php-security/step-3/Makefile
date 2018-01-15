@@ -11,8 +11,14 @@ build:
 install: build
 	@${COMPOSER_CMD} install
 
+update:
+	@${COMPOSER_CMD} update
+
 demo:
 	docker-compose run --rm php && docker-compose stop
 
 clean:
 	@docker-compose down -v
+
+update-email:
+	@docker-compose exec mysql mysql -u user -ppassword tutorial -e "UPDATE user SET email = CONCAT(login, \"@bar.baz\");"
