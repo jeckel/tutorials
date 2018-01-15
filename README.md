@@ -9,6 +9,7 @@ Sources for all tutoriels in http://www.jeckel.fr
 ## PHP
 
 - [1. Docker PHP image with Composer pre-installed](php/1-docker-php-composer)
+- [2. PHP Password and Signature security](php/2-php-security)
 
 # License
 
