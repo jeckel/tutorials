@@ -5,7 +5,8 @@
     "require": {
         "illuminate/database": "^5.5",
         "illuminate/events": "^5.5",
-        "jeckel/demotools": "^0.2"
+        "jeckel/demotools": "^0.3",
+        "jeckel/eloquent-signature": "^0.1"
     },
     "license": "MIT",
     "authors": [

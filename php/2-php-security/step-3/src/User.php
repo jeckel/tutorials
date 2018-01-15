@@ -1,18 +1,17 @@
 <?php
 namespace Tutorial;
 
-use DemoTools\Terminal;
 use Illuminate\Database\Eloquent\Model;
+use Jeckel\EloquentSignature\HasSignature;
+use Jeckel\EloquentSignature\Signable;
 
 /**
  * Class User
  * @package Tutorial
  */
-class User extends Model
+class User extends Model implements Signable
 {
-    use HasHash;
-
-    const SALT = 'MY-SALT';
+    use HasSignature;
 
     /**
      * Define table name
@@ -20,33 +19,15 @@ class User extends Model
      */
     protected $table = 'user';
 
-//    protected $hashProperties = ['login', 'email', 'passwd'];
-
-    public static function boot()
-    {
-        parent::boot();
-        self::setHashProperties(['login', 'email', 'passwd']);
-    }
+    /**
+     * Required
+     */
+    protected static $signatureProperties = ['login', 'email', 'password'];
 
     /**
-     * You can define your own custom boot method.
-     *
-     * @return void
-     **/
-//    public static function boot()
-//    {
-//        parent::boot();
-//        static::retrieved(function(self $user) {
-//            if (! $user->isValid()) {
-//                Terminal::printFailure("Integrity check failed for user '{$user->login}'");
-//            } else {
-//                Terminal::printSuccess("Integrity check ok for user '{$user->login}'");
-//            }
-//        });
-//        static::saving(function(self $user) {
-//            $user->attributes['hash'] = self::generateUserHash($user);
-//        });
-//    }
+     * Required
+     */
+    protected static $signatureSalt = 'MySalt';
 
     /**
      * @param string $login
@@ -61,6 +42,9 @@ class User extends Model
             ->get();
         if (count($user) == 0) {
             throw new \Exception('Login failed');
+        }
+        if (! $user[0]->checkSignatureIsValid()) {
+            throw new \Exception('Integrity check failed, login refused');
         }
         return $user[0];
     }
@@ -81,24 +65,4 @@ class User extends Model
     {
         return sha1($password);
     }
-
-//    /**
-//     * @param User $user
-//     * @return string
-//     */
-//    protected static function generateUserHash(User $user): string
-//    {
-//        $hash = sha1(
-//            $user->login .
-//            $user->email .
-//            self::SALT .
-//            $user->passwd
-//        );
-//        return $hash;
-//    }
-//
-//    public function isValid()
-//    {
-//        return $this->attributes['hash'] == self::generateUserHash($this);
-//    }
 }

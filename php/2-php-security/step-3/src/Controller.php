@@ -1,76 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jmercier
- * Date: 02/01/2018
- * Time: 17:15
- */
-
 namespace Tutorial;
 
-use Illuminate\Database\Capsule\Manager;
+use DemoTools\Color;
 use DemoTools\Terminal;
-use Illuminate\Events\Dispatcher;
 
 class Controller
 {
     /**
-     * @var array
-     */
-    protected $settings;
-
-    /**
-     * Controller constructor.
-     * @param array $settings
-     */
-    public function __construct(array $settings)
-    {
-        $this->settings = $settings;
-    }
-
-    /**
-     * Initialize
-     */
-    public function init()
-    {
-        $this->connectDatabase($this->settings['db']);
-//        User::registerHashValidator();
-//        sleep(2);
-    }
-
-    /**
-     * @param $settings
-     */
-    protected function connectDatabase($settings) {
-        printf("Setting up database connection ");
-
-        $capsule = new Manager();
-        $capsule->setEventDispatcher(new Dispatcher);
-        $capsule->addConnection($settings);
-        $capsule->setAsGlobal();
-        $capsule->bootEloquent();
-
-        $connectionReady = false;
-
-        while (! $connectionReady) {
-            try {
-                if ($capsule->getDatabaseManager()->select("select 1"))
-                {
-                    $connectionReady = true;
-                }
-            } catch(\Exception $e) {
-                printf('.');
-                sleep(1);
-            }
-        }
-
-        Terminal::printSuccess('done');
-    }
-
-    /**
      * Create new user
      */
-    public function createNewUser()
+    static public function createNewUser()
     {
         Terminal::printTitle("Enter user details:");
         $user = new User();
@@ -95,19 +34,20 @@ class Controller
     /**
      * List all users
      */
-    public function listUsersFromDb()
+    static public function listUsersFromDb()
     {
         Terminal::printTitle("List all users from Database:");
         foreach(User::All() as $user) {
-            $this->debugUser($user);
+            static::debugUser($user);
         }
         Terminal::printSuccess('done');
     }
 
     /**
+     * Test login a user
      * @return bool
      */
-    public function login()
+    static public function login()
     {
         Terminal::printTitle('Try to login with user:');
 
@@ -117,11 +57,11 @@ class Controller
                 Terminal::readUserEntry(" - Password: ")
             );
         } catch(\Exception $e) {
-            Terminal::printFailure("Login failed");
+            Terminal::printFailure($e->getMessage());
             return false;
         }
         Terminal::printSuccess('User login success:');
-        $this->debugUser($user);
+        static::debugUser($user);
         Terminal::printSuccess('done');
         return true;
     }
@@ -129,7 +69,18 @@ class Controller
     /**
      * @param User $user
      */
-    protected function debugUser(User $user) {
-        printf("%s\n", $user);
+    static protected function debugUser(User $user) {
+        if ($user->checkSignatureIsValid()) {
+            Terminal::printSuccess('Integrity check success');
+            Terminal::printColoredLine(sprintf("%s", $user), Color::PURPLE_BOLD);
+        } else {
+            Terminal::printFailure('Integrity check failed');
+            Terminal::printColoredLine(sprintf("%s", $user), Color::RED);
+            Terminal::printFailure(sprintf(
+                "Expected: %s\nReceived: %s",
+                $user->generateSignature(),
+                $user->hash
+            ));
+        }
     }
 }
