@@ -1,6 +1,7 @@
 <?php
 namespace Tutorial;
 
+use DemoTools\Terminal;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -24,11 +25,28 @@ class User extends Model
     public static function login(string $login, string $password): User
     {
         $user = self::where('login', $login)
-            ->where('passwd', $password)
+            ->where('passwd', self::passwordHash($password))
             ->get();
         if (count($user) == 0) {
             throw new \Exception('Login failed');
         }
         return $user[0];
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPasswdAttribute(string $password)
+    {
+        $this->attributes['passwd'] = self::passwordHash($password);
+    }
+
+    /**
+     * @param string $password
+     * @return string
+     */
+    protected static function passwordHash(string $password): string
+    {
+        return sha1($password);
     }
 }

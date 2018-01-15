@@ -11,6 +11,9 @@ build:
 install: build
 	@${COMPOSER_CMD} install
 
+update:
+	@${COMPOSER_CMD} update
+
 demo:
 	docker-compose run --rm php && docker-compose stop
 

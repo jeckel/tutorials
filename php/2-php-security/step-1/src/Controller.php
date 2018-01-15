@@ -8,6 +8,7 @@
 
 namespace Tutorial;
 
+use DemoTools\Color;
 use Illuminate\Database\Capsule\Manager;
 use DemoTools\Terminal;
 
@@ -80,6 +81,7 @@ class Controller
                 throw $e;
             }
             // Duplicate key
+            Terminal::printFailure($e->getMessage());
             Terminal::printFailure('User already exists');
             return false;
         }
@@ -125,6 +127,6 @@ class Controller
      * @param User $user
      */
     protected function debugUser(User $user) {
-        printf("%s\n", $user);
+        Terminal::printColoredLine(sprintf("%s\n", $user), Color::PURPLE_BOLD);
     }
 }
