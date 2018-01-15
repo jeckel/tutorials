@@ -43,7 +43,7 @@ class User extends Model
      */
     public function save(array $options = [])
     {
-        $this->attributes['hash'] = self::generateHash($this);
+        $this->attributes['hash'] = $this->generateHash();
         return parent::save($options);
     }
 
@@ -53,7 +53,7 @@ class User extends Model
      */
     public function checkIntegrity(): bool
     {
-        return $this->hash == self::generateHash($this);
+        return $this->hash == $this->generateHash();
     }
 
     /**
@@ -75,17 +75,16 @@ class User extends Model
 
     /**
      * Generate a user signature
-     * @param User $user
      * @return string
      */
-    public static function generateHash(User $user): string
+    public function generateHash(): string
     {
         return sha1(
             sprintf(
                 '%s.SALT.%s.SALT2.%s',
-                $user->login,
-                $user->email,
-                $user->passwd
+                $this->login,
+                $this->email,
+                $this->passwd
             )
         );
     }

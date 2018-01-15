@@ -78,7 +78,7 @@ class Controller
             Terminal::printColoredLine(sprintf("%s", $user), Color::RED);
             Terminal::printFailure(sprintf(
                 "Expected: %s\nReceived: %s",
-                User::generateHash($user),
+                $user->generateHash(),
                 $user->hash
             ));
         }
