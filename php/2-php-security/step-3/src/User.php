@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class User extends Model
 {
+    use HasHash;
+
     const SALT = 'MY-SALT';
 
     /**
@@ -17,6 +19,34 @@ class User extends Model
      * @var string
      */
     protected $table = 'user';
+
+//    protected $hashProperties = ['login', 'email', 'passwd'];
+
+    public static function boot()
+    {
+        parent::boot();
+        self::setHashProperties(['login', 'email', 'passwd']);
+    }
+
+    /**
+     * You can define your own custom boot method.
+     *
+     * @return void
+     **/
+//    public static function boot()
+//    {
+//        parent::boot();
+//        static::retrieved(function(self $user) {
+//            if (! $user->isValid()) {
+//                Terminal::printFailure("Integrity check failed for user '{$user->login}'");
+//            } else {
+//                Terminal::printSuccess("Integrity check ok for user '{$user->login}'");
+//            }
+//        });
+//        static::saving(function(self $user) {
+//            $user->attributes['hash'] = self::generateUserHash($user);
+//        });
+//    }
 
     /**
      * @param string $login
@@ -33,12 +63,6 @@ class User extends Model
             throw new \Exception('Login failed');
         }
         return $user[0];
-    }
-
-    public function save(array $options = [])
-    {
-        $this->attributes['hash'] = self::generateUserHash($this);
-        parent::save($options);
     }
 
     /**
@@ -58,14 +82,23 @@ class User extends Model
         return sha1($password);
     }
 
-    protected static function generateUserHash(User $user): string
-    {
-        return sha1(
-            $user->login .
-            $user->email .
-            self::SALT .
-            $user->passwd .
-            $user->id
-        );
-    }
+//    /**
+//     * @param User $user
+//     * @return string
+//     */
+//    protected static function generateUserHash(User $user): string
+//    {
+//        $hash = sha1(
+//            $user->login .
+//            $user->email .
+//            self::SALT .
+//            $user->passwd
+//        );
+//        return $hash;
+//    }
+//
+//    public function isValid()
+//    {
+//        return $this->attributes['hash'] == self::generateUserHash($this);
+//    }
 }

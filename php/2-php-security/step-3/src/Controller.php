@@ -10,6 +10,7 @@ namespace Tutorial;
 
 use Illuminate\Database\Capsule\Manager;
 use DemoTools\Terminal;
+use Illuminate\Events\Dispatcher;
 
 class Controller
 {
@@ -33,6 +34,8 @@ class Controller
     public function init()
     {
         $this->connectDatabase($this->settings['db']);
+//        User::registerHashValidator();
+//        sleep(2);
     }
 
     /**
@@ -42,6 +45,7 @@ class Controller
         printf("Setting up database connection ");
 
         $capsule = new Manager();
+        $capsule->setEventDispatcher(new Dispatcher);
         $capsule->addConnection($settings);
         $capsule->setAsGlobal();
         $capsule->bootEloquent();
