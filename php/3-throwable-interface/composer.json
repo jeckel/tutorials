@@ -1,0 +1,21 @@
+{
+    "name": "tutorial/php-throwable-exception",
+    "description": "Tutorial about throwing excpetion implementing interfaces",
+    "type": "project",
+    "require": {
+        "jeckel/demotools": "^0.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Julien MERCIER",
+            "email": "devci@j3ck3l.me"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Tutorial\\": "src/"
+        }
+    }
+}

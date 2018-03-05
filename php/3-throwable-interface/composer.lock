@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "ccfebe865f17314e3ae6485f375d9a1a",
+    "packages": [
+        {
+            "name": "jeckel/demotools",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeckel/demotools.git",
+                "reference": "1d66604ff9c7f1c4b4e74ecb9043cf92eb38512b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeckel/demotools/zipball/1d66604ff9c7f1c4b4e74ecb9043cf92eb38512b",
+                "reference": "1d66604ff9c7f1c4b4e74ecb9043cf92eb38512b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DemoTools\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Julien MERCIER",
+                    "email": "devci@j3ck3l.me"
+                }
+            ],
+            "description": "Tools for demo script",
+            "time": "2018-01-15T11:09:48+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
